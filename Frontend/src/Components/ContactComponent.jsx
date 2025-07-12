@@ -167,38 +167,42 @@ const ContactUsComponent = () => {
             </section>
 
             {/* Contact Form & Info Section */}
-            <section className="py-20">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12">
+            <section className="py-20 relative">
+                {/* Decorative Blobs for Mobile & Desktop */}
+                <div className="absolute z-0 left-1/2 top-0 w-60 h-60 bg-blue-500/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/3 md:w-96 md:h-96 md:left-2/3 md:top-1/4 md:blur-2xl"></div>
+                <div className="absolute z-0 right-0 bottom-0 w-40 h-40 bg-purple-500/20 rounded-full blur-2xl translate-x-1/4 translate-y-1/4 md:w-72 md:h-72 md:right-1/4 md:bottom-0"></div>
+                <div className="absolute z-0 left-0 bottom-1/3 w-32 h-32 bg-pink-400/10 rounded-full blur-2xl -translate-x-1/3 md:w-52 md:h-52 md:left-0 md:bottom-1/2"></div>
+                <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-8 md:gap-12 relative z-10">
                     {/* Left: Contact Form */}
-                    <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-8">
-                        <h2 className="text-3xl font-bold mb-6">Send us a Message</h2>
-                        <div className="space-y-6">
+                    <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-2xl p-4 sm:p-8 shadow-lg mb-8 lg:mb-0">
+                        <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Send us a Message</h2>
+                        <div className="space-y-4 sm:space-y-6">
                             {/* Name + Email */}
-                            <div className="grid sm:grid-cols-2 gap-6">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                                 <FormInput icon={User} label="Full Name *" name="name" value={formData.name} onChange={handleInputChange} placeholder="Enter your name" />
                                 <FormInput icon={Mail} label="Email Address *" name="email" type="email" value={formData.email} onChange={handleInputChange} placeholder="Enter your email" />
                             </div>
                             {/* Phone + Company */}
-                            <div className="grid sm:grid-cols-2 gap-6">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                                 <FormInput icon={Phone} label="Phone Number *" name="phone" type="tel" value={formData.phone} onChange={handleInputChange} placeholder="Enter your phone" />
                                 <FormInput icon={Building} label="Company Name" name="companyName" value={formData.companyName} onChange={handleInputChange} placeholder="Enter company name" />
                             </div>
                             {/* Part + Material */}
-                            <div className="grid sm:grid-cols-2 gap-6 border-t border-gray-700 pt-6">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 border-t border-gray-700 pt-4 sm:pt-6">
                                 <FormInput icon={Package} label="Part Name *" name="partName" value={formData.partName} onChange={handleInputChange} placeholder="Enter part name" />
                                 <FormInput icon={Wrench} label="Material *" name="material" value={formData.material} onChange={handleInputChange} placeholder="e.g., Steel, Aluminum, etc." />
                             </div>
                             {/* Quantity + Treatment Type */}
-                            <div className="grid sm:grid-cols-2 gap-6">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                                 <FormInput icon={Hash} label="Quantity" name="quantity" value={formData.quantity} onChange={handleInputChange} placeholder="Enter quantity" />
                                 <SelectInput icon={Thermometer} label="Treatment Type *" name="treatmentType" value={formData.treatmentType} onChange={handleInputChange} options={treatmentTypes} />
                             </div>
                             {/* Deadline + Notes */}
-                            <div className="border-t border-gray-700 pt-6">
+                            <div className="border-t border-gray-700 pt-4 sm:pt-6">
                                 <FormInput icon={Calendar} label="Deadline" name="deadline" type="date" value={formData.deadline} onChange={handleInputChange} />
                                 <TextAreaInput icon={FileText} label="Additional Notes" name="notes" value={formData.notes} onChange={handleInputChange} />
                             </div>
-                            <button onClick={handleSubmit} className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold py-3 px-6 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center justify-center gap-2">
+                            <button onClick={handleSubmit} className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold py-3 px-6 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-md">
                                 <Send className="w-5 h-5" />
                                 <span>Send Message</span>
                             </button>
@@ -206,37 +210,35 @@ const ContactUsComponent = () => {
                     </div>
 
                     {/* Right: Contact Info */}
-                    <div className="space-y-8">
+                    <div className="space-y-6 sm:space-y-8">
                         <div>
-                            <h2 className="text-3xl font-bold text-white mb-4">Get in Touch</h2>
-                            <p className="text-gray-300 text-lg">
+                            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2 sm:mb-4">Get in Touch</h2>
+                            <p className="text-gray-300 text-base sm:text-lg">
                                 Ready to discuss your heat treatment needs? Our team of experts is here to help you find the perfect solution for your industrial requirements.
                             </p>
                         </div>
                         {/* Info Cards */}
                         {contactInfo.map((info, index) => (
-                            <div key={index} className="bg-gray-800/30 border border-gray-700 rounded-2xl p-6 hover:bg-gray-800/50 transition-all duration-300">
-                                <div className="flex gap-4">
-                                    <div className={`p-3 bg-gray-700 rounded-full ${info.color}`}>
-                                        <info.icon className="w-6 h-6" />
-                                    </div>
-                                    <div>
-                                        <h3 className="text-xl font-semibold text-white">{info.title}</h3>
-                                        {info.details.map((d, i) => (
-                                            <p key={i} className="text-gray-300">{d}</p>
-                                        ))}
-                                    </div>
+                            <div key={index} className="bg-gray-800/30 border border-gray-700 rounded-2xl p-4 sm:p-6 hover:bg-gray-800/50 transition-all duration-300 shadow-md flex items-center gap-4">
+                                <div className={`p-3 bg-gray-700 rounded-full ${info.color} flex-shrink-0`}>
+                                    <info.icon className="w-6 h-6" />
+                                </div>
+                                <div>
+                                    <h3 className="text-lg sm:text-xl font-semibold text-white">{info.title}</h3>
+                                    {info.details.map((d, i) => (
+                                        <p key={i} className="text-gray-300 text-sm sm:text-base">{d}</p>
+                                    ))}
                                 </div>
                             </div>
                         ))}
                         {/* Business Hours */}
-                        <div className="bg-gray-800/30 border border-gray-700 rounded-2xl p-6">
-                            <div className="flex items-center gap-3 mb-4">
+                        <div className="bg-gray-800/30 border border-gray-700 rounded-2xl p-4 sm:p-6 shadow-md">
+                            <div className="flex items-center gap-3 mb-2 sm:mb-4">
                                 <Clock className="w-6 h-6 text-blue-400" />
-                                <h3 className="text-xl font-semibold text-white">Business Hours</h3>
+                                <h3 className="text-lg sm:text-xl font-semibold text-white">Business Hours</h3>
                             </div>
                             {businessHours.map((hour, i) => (
-                                <div key={i} className="flex justify-between text-gray-300">
+                                <div key={i} className="flex justify-between text-gray-300 text-sm sm:text-base">
                                     <span>{hour.day}</span>
                                     <span>{hour.hours}</span>
                                 </div>
