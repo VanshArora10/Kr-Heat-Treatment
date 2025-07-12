@@ -49,7 +49,7 @@ const AdminLoginProtectedDashboard = () => {
     const fetchInquiries = async () => {
         setLoading(true);
         try {
-            const response = await fetch("http://localhost:5000/api/inquiry");
+            const response = await fetch("https://kr-heat-treatment.onrender.com/api/inquiry"); // ✅ correct URL now
             if (response.ok) {
                 const data = await response.json();
                 setInquiries(data);
@@ -62,12 +62,6 @@ const AdminLoginProtectedDashboard = () => {
         } finally {
             setLoading(false);
         }
-        if (res.ok && data.success) {
-            setIsAuthenticated(true);
-            localStorage.setItem("isAdmin", "true");
-            fetchInquiries(); // 👈 fetch inquiries immediately after login
-        }
-        
     };
 
     useEffect(() => {
