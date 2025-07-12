@@ -257,27 +257,37 @@ const ContactUsComponent = () => {
 
             {/* Quick Contact CTA */}
             <section className="py-16 bg-gray-900/50">
-                <div className="text-center max-w-4xl mx-auto">
+                <div className="text-center max-w-4xl mx-auto px-4">
                     <h2 className="text-3xl font-bold text-white mb-4">Need Immediate Assistance?</h2>
                     <p className="text-lg text-gray-300 mb-8">
                         For urgent inquiries or quick quotes, reach out to us directly
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a
-                            href="tel:+918872414000"
-                            className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-8 rounded-full hover:from-blue-700 hover:to-purple-700 transition-all flex items-center justify-center gap-2"
-                        >
-                            <Phone className="w-5 h-5" /> <span>Call Now</span>
-                        </a>
-                        <a
-                            href="mailto:aryansharma732005@gmail.com"
-                            className="border-2 border-white text-white py-3 px-8 rounded-full hover:bg-white hover:text-black transition-all flex items-center justify-center gap-2"
-                        >
-                            <Mail className="w-5 h-5" /> <span>Email Us</span>
-                        </a>
+                        {/* Call Now Button */}
+                        <div className="w-full sm:w-auto">
+                            <a
+                                href="tel:+918872414000"
+                                className="w-full sm:w-auto block bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-full hover:from-blue-700 hover:to-purple-700 transition-all flex items-center justify-center gap-2 text-base sm:text-lg"
+                            >
+                                <Phone className="w-5 h-5" />
+                                <span>Call Now</span>
+                            </a>
+                        </div>
+
+                        {/* Email Us Button */}
+                        <div className="w-full sm:w-auto">
+                            <a
+                                href="mailto:aryansharma732005@gmail.com"
+                                className="w-full sm:w-auto block border-2 border-white text-white py-3 px-6 rounded-full hover:bg-white hover:text-black transition-all flex items-center justify-center gap-2 text-base sm:text-lg"
+                            >
+                                <Mail className="w-5 h-5" />
+                                <span>Email Us</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
+
         </div>
     );
 };
