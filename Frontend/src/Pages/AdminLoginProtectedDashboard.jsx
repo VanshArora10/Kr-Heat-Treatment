@@ -16,10 +16,10 @@ const AdminLoginProtectedDashboard = () => {
         setAuthError("");
 
         try {
-            const res = await fetch("http://localhost:5000/api/admin/login", {
+            const res = await fetch("https://kr-heat-treatment.onrender.com/api/admin/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(form)
+                body: JSON.stringify(form),
             });
 
             const data = await res.json();
