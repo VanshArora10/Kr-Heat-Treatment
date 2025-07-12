@@ -34,6 +34,7 @@ const router = createBrowserRouter([
       { path: '/inquiryform', element: <InquiryForm /> },
       { path: '/aboutus', element: <Aboutus /> },
       { path: '/contact', element: <Contact /> },
+      { path: '/admin', element: <AdminLoginProtectedDashboard /> },
     ],
   },
   {
