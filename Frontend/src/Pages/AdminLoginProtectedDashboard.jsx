@@ -251,7 +251,7 @@ const AdminLoginProtectedDashboard = () => {
                                 {loading ? (
                                     <div className="text-center py-6 sm:py-8">
                                         <RefreshCw className="w-6 h-6 sm:w-8 sm:h-8 animate-spin mx-auto mb-2 text-gray-400" />
-                                        <p className="text-gray-400 text-sm">Loading...</p>
+                                        <p className="text-gray-400 text-sm">Loading....</p>
                                     </div>
                                 ) : recentInquiries.length > 0 ? (
                                     <div className="space-y-3 sm:space-y-4">
