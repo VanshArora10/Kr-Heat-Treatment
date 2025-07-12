@@ -68,7 +68,7 @@ const ContactUsComponent = () => {
         }
 
         try {
-            fetch("https://kr-heat-treatment.onrender.com/api/inquiry", {
+            const res = await fetch("https://kr-heat-treatment.onrender.com/api/inquiry", {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)

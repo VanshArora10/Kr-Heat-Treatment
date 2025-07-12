@@ -262,7 +262,7 @@ const AdminLoginProtectedDashboard = () => {
                                                         <h4 className="font-semibold text-white text-sm truncate">{inquiry.name}</h4>
                                                         <p className="text-gray-400 text-xs mt-1 truncate">{inquiry.email}</p>
                                                         <p className="text-gray-400 text-xs mt-1">
-                                                            {inquiry.part || inquiry.partName} - Qty: {inquiry.quantity}
+                                                            {inquiry.partName} - Qty: {inquiry.quantity}
                                                         </p>
                                                     </div>
                                                     <div className="text-xs text-gray-500 ml-2 flex-shrink-0">
@@ -349,7 +349,7 @@ const AdminLoginProtectedDashboard = () => {
                                                         </td>
                                                         <td className="p-2 sm:p-3 text-gray-300 hidden md:table-cell">{inquiry.phone}</td>
                                                         <td className="p-2 sm:p-3 text-gray-300">
-                                                            <div className="max-w-20 sm:max-w-none truncate">{inquiry.part || inquiry.partName}</div>
+                                                            <div className="max-w-20 sm:max-w-none truncate">{inquiry.partName}</div>
                                                         </td>
                                                         <td className="p-2 sm:p-3 text-gray-300">{inquiry.quantity}</td>
                                                         <td className="p-2 sm:p-3 text-gray-300 hidden lg:table-cell">
