@@ -218,19 +218,26 @@ const ContactUsComponent = () => {
                             </p>
                         </div>
                         {/* Info Cards */}
-                        {contactInfo.map((info, index) => (
-                            <div key={index} className="bg-gray-800/30 border border-gray-700 rounded-2xl p-4 sm:p-6 hover:bg-gray-800/50 transition-all duration-300 shadow-md flex items-center gap-4">
-                                <div className={`p-3 bg-gray-700 rounded-full ${info.color} flex-shrink-0`}>
-                                    <info.icon className="w-6 h-6" />
+                        {contactInfo.map((info, index) => {
+                            const Icon = info.icon;
+                            return (
+                                <div
+                                    key={index}
+                                    className="bg-gray-800/30 border border-gray-700 rounded-2xl p-4 sm:p-6 hover:bg-gray-800/50 transition-all duration-300 shadow-md flex items-start gap-4"
+                                >
+                                    <div className={`w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-full ${info.color} flex-shrink-0`}>
+                                        <Icon className="w-6 h-6 text-white" />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-lg sm:text-xl font-semibold text-white mb-1">{info.title}</h3>
+                                        {info.details.map((d, i) => (
+                                            <p key={i} className="text-gray-300 text-sm sm:text-base leading-snug">{d}</p>
+                                        ))}
+                                    </div>
                                 </div>
-                                <div>
-                                    <h3 className="text-lg sm:text-xl font-semibold text-white">{info.title}</h3>
-                                    {info.details.map((d, i) => (
-                                        <p key={i} className="text-gray-300 text-sm sm:text-base">{d}</p>
-                                    ))}
-                                </div>
-                            </div>
-                        ))}
+                            );
+                        })}
+
                         {/* Business Hours */}
                         <div className="bg-gray-800/30 border border-gray-700 rounded-2xl p-4 sm:p-6 shadow-md">
                             <div className="flex items-center gap-3 mb-2 sm:mb-4">
